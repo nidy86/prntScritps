@@ -3,14 +3,14 @@ import RPi.GPIO as GPIO
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM) # GPIO Nummern statt Board Nummern
 
-def on(relID):
+def on(self,relID):
     RELAIS_1_GPIO = relID
     GPIO.setup(RELAIS_1_GPIO, GPIO.OUT) # GPIO Modus zuweisen
     GPIO.output(RELAIS_1_GPIO, GPIO.LOW) # an
     
     return
     
-def off(relID):
+def off(self,relID):
     RELAIS_1_GPIO = relID
     GPIO.setup(RELAIS_1_GPIO, GPIO.OUT) # GPIO Modus zuweisen
     GPIO.output(RELAIS_1_GPIO, GPIO.LOW) # an
