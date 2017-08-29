@@ -6,4 +6,4 @@ GPIO.setup(RELAIS_1_GPIO, GPIO.OUT) # GPIO Modus zuweisen
 GPIO.output(RELAIS_1_GPIO, GPIO.LOW) # an
 GPIO.output(RELAIS_1_GPIO, GPIO.HIGH) # aus
 
-GPIO.cleanup()
+GPIO.cleanup() 
