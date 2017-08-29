@@ -32,16 +32,14 @@ def main(argv):
          print 'switch.py -p <BMC-ID> -d <ON/OFF>'
          sys.exit()
       elif opt in ("-p", "--port"):
-         port = arg
+         port = int(arg)
       elif opt in ("-d", "--dir"):
          dir = arg
    
    if dir=="ON":
-       #on(port)
-       print 'ON: "', port
+       on(port)
    else:
-       #off(port) 
-       print 'OFF: "', port
+       off(port)
 
 if __name__ == "__main__":
     try:
