@@ -35,8 +35,8 @@ def main(argv):
          port = arg
       elif opt in ("-d", "--dir"):
          dir = arg
-   types = "on" or "ON" or "On"
-   if dir==types:
+   
+   if dir=="ON":
        #on(port)
        print 'ON: "', port
    else:
