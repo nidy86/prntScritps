@@ -37,9 +37,11 @@ def main(argv):
          dir = arg
    types = "on" or "ON" or "On"
    if dir==types:
-       on(port)
+       #on(port)
+       print 'ON: "', port
    else:
-       off(port) 
+       #off(port) 
+       print 'OFF: "', port
 
 if __name__ == "__main__":
     try:
