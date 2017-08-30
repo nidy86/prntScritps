@@ -30,8 +30,10 @@ def all(pixels, color=(255,255,255)):
 def lite(pixels, color=(255,255,255)):
     pixels.clear()
     half = pixels.count()/2
-    for k in range(half):
-        pixels.set_pixel(k, Adafruit_WS2801.RGB_to_color( color[0], color[1], color[2] ))
+    third = half/3
+    for k in range(third):
+        pixels.set_pixel(k+third, Adafruit_WS2801.RGB_to_color( color[0], color[1], color[2] ))
+        pixels.set_pixel(k+third+half, Adafruit_WS2801.RGB_to_color( color[0], color[1], color[2] ))
     pixels.show()  # Make sure to call show() after changing any pixels!
 
 def top(pixels, color=(255,255,255)):
