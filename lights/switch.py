@@ -58,28 +58,34 @@ def switch_off(pixels):
     pixels.show()  # Make sure to call show() after changing any pixels!
 
 def main(pixels,argv):
-   color = (255,255,255)
+   color = (255,174,250)
    dir = ''
    try:
       opts, args = getopt.getopt(argv,"hc:d:x:",["color=","dir=","rgb="])
    except getopt.GetoptError:
-      print 'switch.py -c <white/red/blue/yellow/green -d <ON/LITE/TOP/BOTTOM/OFF> --rgb=<R>,<G>,<B>'
+      print 'switch.py -c <white/red/blue/yellow/green -d <ON/LITE/TOP/BOTTOM/OFF> --rgb=<R>,<B>,<G>'
       sys.exit(2)
    for opt, arg in opts:
       if opt == '-h':
-         print 'switch.py -c <white/red/blue/yellow/green -d <ON/LITE/TOP/BOTTOM/OFF> --rgb=<R>,<G>,<B>'
+         print 'switch.py -c <white/red/blue/yellow/green/purple/cyan -d <ON/LITE/TOP/BOTTOM/OFF> --rgb=<R>,<B>,<G>'
          sys.exit()
       elif opt in ("-c", "--color"):
          if arg=="white":
              color=(255,255,255)
+         elif arg=="warm":
+             color=(255,174,250)
          elif arg=="red":
              color=(255,0,0)
          elif arg=="blue":
              color=(0,255,0)
          elif arg=="yellow":
-             color=(0,255,0)
+             color=(255,0,255)
          elif arg=="green":
              color=(0,0,255)
+         elif arg=="purple":
+             color=(255,255,0)
+         elif arg=="cyan":
+             color=(0,255,255)
          else:
              color=(0,0,0)
       elif opt in ("-d", "--dir"):
