@@ -42,7 +42,7 @@ def rainbow_cycle_successive(pixels, wait=0.1):
         # Then add in j which makes the colors go around per pixel
         # the % 96 is to make the wheel cycle around
         pixels.set_pixel(i, wheel(((i * 256 // pixels.count())) % 256) )
-        pixels.set_pixel(end-i, wheel(((i * 256 // pixels.count())) % 256) )
+        pixels.set_pixel((end-1)-i, wheel(((i * 256 // pixels.count())) % 256) )
         pixels.show()
         if wait > 0:
             time.sleep(wait)
