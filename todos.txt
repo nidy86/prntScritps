@@ -1,10 +1,13 @@
 sudo apt update
 sudo apt full-upgrade
 
-sudo raspi-config
+sudo raspi-config #SPI activieren, max Size,
 
 sudo apt-get install git
 
 sudo apt-get install python-dev python-rpi.gpio
 sudo apt-get install python-pip -y
 sudo pip install adafruit-ws2801
+
+cd /home/pi/scripts
+git clone https://github.com/nidy86/prntScritps.git
