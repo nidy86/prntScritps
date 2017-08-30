@@ -61,7 +61,7 @@ def main(pixels,argv):
    color = (255,255,255)
    dir = ''
    try:
-      opts, args = getopt.getopt(argv,"hc:d:x:",["color=","dir=","rgb"])
+      opts, args = getopt.getopt(argv,"hc:d:x:",["color=","dir=","rgb="])
    except getopt.GetoptError:
       print 'switch.py -c <white/red/blue/yellow/green -d <ON/LITE/TOP/BOTTOM/OFF> -x <R>,<G>,<B>'
       sys.exit(2)
@@ -75,17 +75,18 @@ def main(pixels,argv):
          elif arg=="red":
              color=(255,0,0)
          elif arg=="blue":
-             color=(0,0,255)
+             color=(0,255,0)
          elif arg=="yellow":
              color=(0,255,0)
          elif arg=="green":
-             color=(0,255,0)
+             color=(0,0,255)
          else:
              color=(0,0,0)
       elif opt in ("-d", "--dir"):
          dir = arg
       elif opt in ("-x,","--rgb"):
           clr = arg.split(",")
+          print arg
           color=(int(clr[0]),int(clr[1]),int(clr[2]))
    
    if dir=="ON":
