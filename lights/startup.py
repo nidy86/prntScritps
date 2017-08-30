@@ -34,7 +34,7 @@ def wheel(pos):
         return Adafruit_WS2801.RGB_to_color(0, pos * 3, 255 - pos * 3)
 
 def rainbow_cycle_successive(pixels, wait=0.1):
-     x = pixels.count()/2
+    x = pixels.count()/2
     for i in range(x):
         # tricky math! we use each pixel as a fraction of the full 96-color wheel
         # (thats the i / strip.numPixels() part)
