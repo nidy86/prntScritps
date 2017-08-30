@@ -17,7 +17,7 @@ def off(relID):
 if __name__ == "__main__":
     try:
         for i in range(len(RELAY)):
-            off(relay[i])
+            off(RELAY[i])
         GPIO.cleanup()
     except KeyboardInterrupt:
         print("User stop")
