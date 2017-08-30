@@ -55,6 +55,18 @@ def rainbow_colors(pixels, wait=0.05):
         if wait > 0:
             time.sleep(wait)
 
+def brightness_decrease(pixels, wait=0.01, step=1):
+    for j in range(int(256 // step)):
+        for i in range(pixels.count()):
+            r, g, b = pixels.get_pixel_rgb(i)
+            r = int(max(0, r - step))
+            g = int(max(0, g - step))
+            b = int(max(0, b - step))
+            pixels.set_pixel(i, Adafruit_WS2801.RGB_to_color( r, g, b ))
+        pixels.show()
+        if wait > 0:
+            time.sleep(wait)
+
 def switch_off(pixels):
     pixels.clear()
     color = (0,0,0)
@@ -70,6 +82,8 @@ if __name__ == "__main__":
         
         #rainbow_colors(pixels, 0.05)
         rainbow_cycle_successive(pixels, 0.05)
+        time.sleep(1)
+        brightness_decrease(pixels)
         time.sleep(1)
         switch_off(pixels)
     except KeyboardInterrupt:
