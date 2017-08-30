@@ -1,4 +1,9 @@
+sudo apt update
+sudo apt full-upgrade
+
 sudo raspi-config
+
+sudo apt-get install git
 
 sudo apt-get install python-dev python-rpi.gpio
 sudo apt-get install python-pip -y
