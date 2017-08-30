@@ -69,7 +69,7 @@ if __name__ == "__main__":
         pixels.show()
         
         #rainbow_colors(pixels, 0.05)
-        rainbow_cycle_successive(pixels, 0.1)
+        rainbow_cycle_successive(pixels, 0.05)
         time.sleep(1)
         switch_off(pixels)
     except KeyboardInterrupt:
