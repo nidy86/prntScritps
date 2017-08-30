@@ -1,0 +1,5 @@
+sudo raspi-config
+
+sudo apt-get install python-dev python-rpi.gpio
+sudo apt-get install python-pip -y
+sudo pip install adafruit-ws2801
