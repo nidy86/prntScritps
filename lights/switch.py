@@ -63,11 +63,11 @@ def main(pixels,argv):
    try:
       opts, args = getopt.getopt(argv,"hc:d:x:",["color=","dir=","rgb="])
    except getopt.GetoptError:
-      print 'switch.py -c <white/red/blue/yellow/green -d <ON/LITE/TOP/BOTTOM/OFF> -x <R>,<G>,<B>'
+      print 'switch.py -c <white/red/blue/yellow/green -d <ON/LITE/TOP/BOTTOM/OFF> --rgb=<R>,<G>,<B>'
       sys.exit(2)
    for opt, arg in opts:
       if opt == '-h':
-         print 'switch.py -c <white/red/blue/yellow/green -d <ON/LITE/TOP/BOTTOM/OFF> -x <R>,<G>,<B>'
+         print 'switch.py -c <white/red/blue/yellow/green -d <ON/LITE/TOP/BOTTOM/OFF> --rgb=<R>,<G>,<B>'
          sys.exit()
       elif opt in ("-c", "--color"):
          if arg=="white":
@@ -86,7 +86,6 @@ def main(pixels,argv):
          dir = arg
       elif opt in ("-x,","--rgb"):
           clr = arg.split(",")
-          print arg
           color=(int(clr[0]),int(clr[1]),int(clr[2]))
    
    if dir=="ON":
