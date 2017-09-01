@@ -13,6 +13,9 @@ from rswitch import RelaySwitch
 
 class TempSensor():
     def __init__(self):
+        GPIO.setwarnings(False)
+        GPIO.setmode(GPIO.BCM) # GPIO Nummern statt Board Nummern
+        
         os.system('modprobe w1-gpio')                              # load one wire communication device kernel modules
         os.system('modprobe w1-therm')                                                 
         base_dir = '/sys/bus/w1/devices/'                          # point to the address
