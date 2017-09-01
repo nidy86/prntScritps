@@ -67,7 +67,7 @@ def main(argv):
       sys.exit(2)
    for opt, arg in opts:
       if opt == '-h':
-         print 'temperature.py -p <BMC-ID> -d <OVER/UNDER/OFF>'
+         print 'temperature.py -p <BMC-ID> -d <OVER/UNDER/OFF> -t <float(TEMP)> -s <sleep> -x <SHOW/HIDE>'
          sys.exit()
       elif opt in ("-p", "--port"):
          port = int(arg)
