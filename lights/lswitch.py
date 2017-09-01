@@ -24,13 +24,13 @@ class LightSwitch():
         self.pixels = Adafruit_WS2801.WS2801Pixels(self.PIXEL_COUNT, spi=SPI.SpiDev(self.SPI_PORT, self.SPI_DEVICE), gpio=GPIO)
         self.color = color
     
-    def all():
+    def all(self):
         self.pixels.clear()
         for k in range(self.pixels.count()):
             self.pixels.set_pixel(k, Adafruit_WS2801.RGB_to_color( self.color[0], self.color[1], self.color[2] ))
         self.pixels.show()  # Make sure to call show() after changing any pixels!
     
-    def lite():
+    def lite(self):
         self.pixels.clear()
         half = self.pixels.count()/2
         third = half/3
@@ -39,21 +39,21 @@ class LightSwitch():
             self.pixels.set_pixel(k+third+half, Adafruit_WS2801.RGB_to_color( self.color[0], self.color[1], self.color[2] ))
         self.pixels.show()  # Make sure to call show() after changing any pixels!
     
-    def top():
+    def top(self):
         self.pixels.clear()
         half = self.pixels.count()/2
         for k in range(half):
             self.pixels.set_pixel(k, Adafruit_WS2801.RGB_to_color( self.color[0], self.color[1], self.color[2] ))
         self.pixels.show()  # Make sure to call show() after changing any pixels!
         
-    def bottom():
+    def bottom(self):
         self.pixels.clear()
         half = self.pixels.count()/2
         for k in range(half):
             self.pixels.set_pixel(k+half, Adafruit_WS2801.RGB_to_color( self.color[0], self.color[1], self.color[2] ))
         self.pixels.show()  # Make sure to call show() after changing any pixels!
         
-    def switch_off():
+    def switch_off(self):
         self.pixels.clear()
         color = (0,0,0)
         for k in range(self.pixels.count()):
