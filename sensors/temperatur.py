@@ -8,7 +8,6 @@ import glob                                                # import glob module
 import time                                                # import time module
 
 import sys, getopt
-from Carbon.Aliases import false
 sys.path += ['../relays']
 from rswitch import RelaySwitch
 
