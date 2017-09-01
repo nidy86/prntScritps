@@ -8,6 +8,7 @@ import glob                                                # import glob module
 import time                                                # import time module
 
 import sys, getopt
+import RPi.GPIO as GPIO
 sys.path += ['../relays']
 from rswitch import RelaySwitch
 
