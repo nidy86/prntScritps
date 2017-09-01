@@ -12,7 +12,7 @@ class RelaySwitch():
         GPIO.setup(self.RELAY_ID_GPIO, GPIO.OUT) # GPIO Modus zuweisen
         GPIO.output(self.RELAY_ID_GPIO, GPIO.LOW) # an
     
-    def off(self,relID):
+    def off(self):
         GPIO.setup(self.RELAY_ID_GPIO, GPIO.OUT) # GPIO Modus zuweisen
         GPIO.output(self.RELAY_ID_GPIO, GPIO.LOW) # an
         GPIO.output(self.RELAY_ID_GPIO, GPIO.HIGH) # aus
