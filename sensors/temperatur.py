@@ -98,8 +98,8 @@ def main(argv):
            time.sleep(sleep)
    except KeyboardInterrupt:
         print("User stop")
-        GPIO.cleanup()
-           
+        if(dir!='OFF'):
+           relay.off()   
            
 
 if __name__ == "__main__":
