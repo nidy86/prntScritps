@@ -29,11 +29,11 @@ def main(argv):
    try:
       opts, args = getopt.getopt(argv,"hp:d:",["port=","dir="])
    except getopt.GetoptError:
-      print 'switch.py -p <BMC-ID> -d <ON/OFF>'
+      print 'rswitch.py -p <BMC-ID> -d <ON/OFF>'
       sys.exit(2)
    for opt, arg in opts:
       if opt == '-h':
-         print 'switch.py -p <BMC-ID> -d <ON/OFF>'
+         print 'rswitch.py -p <BMC-ID> -d <ON/OFF>'
          sys.exit()
       elif opt in ("-p", "--port"):
          port = int(arg)
