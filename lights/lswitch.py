@@ -57,7 +57,7 @@ class LightSwitch():
         self.pixels.clear()
         color = (0,0,0)
         for k in range(self.pixels.count()):
-            self.pixels.set_pixel(k, Adafruit_WS2801.RGB_to_color( self.color[0], self.color[1], self.color[2] ))
+            self.pixels.set_pixel(k, Adafruit_WS2801.RGB_to_color( color[0], color[1], color[2] ))
         self.pixels.show()  # Make sure to call show() after changing any pixels!
 
 def main(argv):
