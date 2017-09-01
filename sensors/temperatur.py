@@ -36,7 +36,7 @@ def read_temp():
 while True:
    temp = read_temp()  
    print(temp)                                    # Print temperature  
-   if tmp<23 :
+   if temp<23 :
        on(14)
    else:
        off(14)  
