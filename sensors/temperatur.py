@@ -1,6 +1,16 @@
+'''
+Created on 29.08.2017 ... SENSOR DS18B20
+@author: patrik
+'''
+
 import os                                                  # import os module
 import glob                                                # import glob module
 import time                                                # import time module
+
+import sys
+sys.path += ['../relays']
+from switch import on,off
+
 os.system('modprobe w1-gpio')                              # load one wire communication device kernel modules
 os.system('modprobe w1-therm')                                                 
 base_dir = '/sys/bus/w1/devices/'                          # point to the address
@@ -21,9 +31,13 @@ def read_temp():
    if equals_pos != -1:
       temp_string = lines[1][equals_pos+2:]
       temp_c = float(temp_string) / 1000.0                 # convert to Celsius
-      temp_f = temp_c * 9.0 / 5.0 + 32.0                   # convert to Fahrenheit 
-      return temp_c, temp_f
+      return temp_c
 
 while True:
-   print(read_temp())                                      # Print temperature    
+   temp = read_temp()  
+   print(temp)                                    # Print temperature  
+   if tmp<23 :
+       on(14)
+   else:
+       off(14)  
    time.sleep(1)
