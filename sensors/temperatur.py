@@ -13,7 +13,7 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM) # GPIO Nummern statt Board Nummern
 
 sys.path += ['../relays']
-from switch import on,off
+from switch import RelaySwitch
 
 os.system('modprobe w1-gpio')                              # load one wire communication device kernel modules
 os.system('modprobe w1-therm')                                                 
@@ -38,10 +38,11 @@ def read_temp():
       return temp_c
 
 while True:
+   relay = RelaySwitch(14)
    temp = read_temp()  
    print(temp)                                    # Print temperature  
    if temp<23 :
-       on(14)
+       relay.on()
    else:
-       off(14)  
+       relay.off()  
    time.sleep(1)

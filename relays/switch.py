@@ -1,25 +1,29 @@
 import sys, getopt
 import RPi.GPIO as GPIO
-GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BCM) # GPIO Nummern statt Board Nummern
 
-def on(relID):
-    RELAIS_1_GPIO = relID
-    GPIO.setup(RELAIS_1_GPIO, GPIO.OUT) # GPIO Modus zuweisen
-    GPIO.output(RELAIS_1_GPIO, GPIO.LOW) # an
-    
-    return
-    
-def off(relID):
-    RELAIS_1_GPIO = relID
-    GPIO.setup(RELAIS_1_GPIO, GPIO.OUT) # GPIO Modus zuweisen
-    GPIO.output(RELAIS_1_GPIO, GPIO.LOW) # an
-    GPIO.output(RELAIS_1_GPIO, GPIO.HIGH) # aus
+class RelaySwitch():
+ 
+    def __init__(self,bcmPort):
+        GPIO.setwarnings(False)
+        GPIO.setmode(GPIO.BCM) # GPIO Nummern statt Board Nummern
+        self.RELAY_ID_GPIO = bcmPort
 
-    GPIO.cleanup()
-    return
+    def on(self):
+        GPIO.setup(self.RELAY_ID_GPIO, GPIO.OUT) # GPIO Modus zuweisen
+        GPIO.output(self.RELAY_ID_GPIO, GPIO.LOW) # an
+    
+    def off(self,relID):
+        GPIO.setup(self.RELAY_ID_GPIO, GPIO.OUT) # GPIO Modus zuweisen
+        GPIO.output(self.RELAY_ID_GPIO, GPIO.LOW) # an
+        GPIO.output(self.RELAY_ID_GPIO, GPIO.HIGH) # aus
+
+        GPIO.cleanup()
+        
+    def close(self):
+        GPIO.cleanup()
 
 def main(argv):
+   
    port = ''
    dir = ''
    try:
@@ -36,10 +40,12 @@ def main(argv):
       elif opt in ("-d", "--dir"):
          dir = arg
    
+   relay = RelaySwitch(port)
+   
    if dir=="ON":
-       on(port)
+       relay.on()
    else:
-       off(port)
+       relay.off()
 
 if __name__ == "__main__":
     try:
