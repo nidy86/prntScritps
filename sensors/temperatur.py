@@ -7,7 +7,11 @@ import os                                                  # import os module
 import glob                                                # import glob module
 import time                                                # import time module
 
-import sys
+import sys, getopt
+import RPi.GPIO as GPIO
+GPIO.setwarnings(False)
+GPIO.setmode(GPIO.BCM) # GPIO Nummern statt Board Nummern
+
 sys.path += ['../relays']
 from switch import on,off
 
