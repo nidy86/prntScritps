@@ -13,7 +13,7 @@ GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM) # GPIO Nummern statt Board Nummern
 
 sys.path += ['../relays']
-from switch import RelaySwitch
+from rswitch import RelaySwitch
 
 os.system('modprobe w1-gpio')                              # load one wire communication device kernel modules
 os.system('modprobe w1-therm')                                                 
