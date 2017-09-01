@@ -4,15 +4,19 @@ import RPi.GPIO as GPIO
 class RelaySwitch():
  
     def __init__(self,bcmPort):
-        GPIO.setwarnings(False)
-        GPIO.setmode(GPIO.BCM) # GPIO Nummern statt Board Nummern
         self.RELAY_ID_GPIO = bcmPort
 
     def on(self):
+        GPIO.setwarnings(False)
+        GPIO.setmode(GPIO.BCM) # GPIO Nummern statt Board Nummern
+        
         GPIO.setup(self.RELAY_ID_GPIO, GPIO.OUT) # GPIO Modus zuweisen
         GPIO.output(self.RELAY_ID_GPIO, GPIO.LOW) # an
     
     def off(self):
+        GPIO.setwarnings(False)
+        GPIO.setmode(GPIO.BCM) # GPIO Nummern statt Board Nummern
+        
         GPIO.setup(self.RELAY_ID_GPIO, GPIO.OUT) # GPIO Modus zuweisen
         GPIO.output(self.RELAY_ID_GPIO, GPIO.LOW) # an
         GPIO.output(self.RELAY_ID_GPIO, GPIO.HIGH) # aus

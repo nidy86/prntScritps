@@ -8,14 +8,11 @@ import glob                                                # import glob module
 import time                                                # import time module
 
 import sys, getopt
-import RPi.GPIO as GPIO
 sys.path += ['../relays']
 from rswitch import RelaySwitch
 
 class TempSensor():
     def __init__(self):
-        GPIO.setwarnings(False)
-        GPIO.setmode(GPIO.BCM) # GPIO Nummern statt Board Nummern
         
         os.system('modprobe w1-gpio')                              # load one wire communication device kernel modules
         os.system('modprobe w1-therm')                                                 
