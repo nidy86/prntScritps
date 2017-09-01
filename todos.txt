@@ -1,7 +1,7 @@
 sudo apt update
 sudo apt full-upgrade
 
-sudo raspi-config #SPI activieren, max Size,
+sudo raspi-config #SPI activieren, max Size, W1
 
 sudo apt-get install git
 
