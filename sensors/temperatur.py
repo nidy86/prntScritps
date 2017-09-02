@@ -87,15 +87,18 @@ def main(argv):
    try:
        if(dir!='OFF'):
            relay = RelaySwitch(port)
-       while True:
-           if(show==True):
-               sensor.show()
-           if(dir!='OFF'):
-               if(dir=='OVER'):
-                   sensor.switchOnOver(relay, temp)
-               else:
-                   sensor.switchOnUnder(relay, temp)
-           time.sleep(sleep)
+           while True:
+               if(show==True):
+                   sensor.show()
+               if(dir!='OFF'):
+                   if(dir=='OVER'):
+                       sensor.switchOnOver(relay, temp)
+                   else:
+                       sensor.switchOnUnder(relay, temp)
+               time.sleep(sleep)
+       else:
+          sensor.show()
+          
    except KeyboardInterrupt:
         print("User stop")
         if(dir!='OFF'):
