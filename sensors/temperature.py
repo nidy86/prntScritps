@@ -8,7 +8,7 @@ import glob                                                # import glob module
 import time                                                # import time module
 
 import sys, getopt
-sys.path += ['../relays']
+sys.path += ['/home/pi/scripts/prntScritps/relays']
 from rswitch import RelaySwitch
 
 class TempSensor():
